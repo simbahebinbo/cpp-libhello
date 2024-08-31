@@ -1,5 +1,5 @@
 #include <iostream>
-#include <libhello/hello.hpp>
+#include <libhello/greet.hpp>
 
 
 namespace libhello
