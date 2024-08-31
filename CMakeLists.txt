@@ -37,7 +37,7 @@ option(LSAN "Enable leak sanitizer" OFF)
 option(MSAN "Enable memory sanitizer" OFF)
 option(TSAN "Enable thread sanitizer" OFF)
 option(UBSAN "Enable UB sanitizer" OFF)
-option(EXPOSE_MOCKS "Make mocks header files visible for child projects" OFF)
+option(EXPOSE_MOCKS "Make mocks header files visible for child projects" ON)
 option(METRICS_ENABLED "Enable libhello metrics" OFF)
 
 include(cmake/print.cmake)
@@ -121,16 +121,12 @@ endif ()
 
 include(CMakePackageConfigHelpers)
 
-message("CMAKE_CURRENT_LIST_DIR" , ${CMAKE_CURRENT_LIST_DIR})
 
 set(CONFIG_INCLUDE_DIRS ${CMAKE_INSTALL_FULL_INCLUDEDIR}/libhello)
 configure_package_config_file(${CMAKE_CURRENT_LIST_DIR}/cmake/libhelloConfig.cmake.in
         ${CMAKE_CURRENT_BINARY_DIR}/libhelloConfig.cmake
         INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/libhello
 )
-
-message("CMAKE_CURRENT_BINARY_DIR" , ${CMAKE_CURRENT_BINARY_DIR})
-message("CMAKE_INSTALL_LIBDIR" , ${CMAKE_INSTALL_LIBDIR})
 
 install(FILES
         ${CMAKE_CURRENT_BINARY_DIR}/libhelloConfig.cmake
