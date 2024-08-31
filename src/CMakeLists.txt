@@ -6,6 +6,7 @@
 
 add_library(hello
         libhello.cpp
+        greet.cpp
 )
 target_link_libraries(hello INTERFACE
 )

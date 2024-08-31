@@ -1,5 +1,5 @@
 #!/bin/sh
 
-./build/greet
+./build/example/greet
 
 

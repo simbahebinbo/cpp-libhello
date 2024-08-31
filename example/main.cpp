@@ -1,9 +1,9 @@
 #include <libhello/greet.hpp>
 
-// using namespace libhello;
+using namespace libhello;
 
 int main()
 {
-    libhello::greet();
+    greet();
     return 0;
 }

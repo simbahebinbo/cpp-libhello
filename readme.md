@@ -27,9 +27,20 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 $ ./build.sh
 ```
 
+安装
+
+```shell
+$ ./install.sh
+```
+
+测试
+
+```shell
+$ ./test.sh
+```
+
 运行
 
 ```shell
 $ ./run.sh
 ```
-
