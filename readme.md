@@ -39,8 +39,3 @@ $ ./install.sh
 $ ./test.sh
 ```
 
-运行
-
-```shell
-$ ./run.sh
-```
