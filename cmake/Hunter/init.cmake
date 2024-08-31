@@ -5,33 +5,34 @@ string(COMPARE EQUAL "$ENV{GITHUB_HUNTER_USERNAME}" "" username_is_empty)
 
 # binary cache can be uploaded to qdrvm/hunter-binary-cache so others will not build same dependencies twice
 if (NOT password_is_empty AND NOT username_is_empty)
-  option(HUNTER_RUN_UPLOAD "Upload cache binaries" YES)
-  message("Binary cache uploading is ENABLED.")
-else()
+    option(HUNTER_RUN_UPLOAD "Upload cache binaries" YES)
+    message("Binary cache uploading is ENABLED.")
+else ()
     option(HUNTER_RUN_UPLOAD "Upload cache binaries" NO)
     message("Binary cache uploading is DISABLED.")
 endif ()
 
 set(
-    HUNTER_PASSWORDS_PATH
-    "${CMAKE_CURRENT_LIST_DIR}/passwords.cmake"
-    CACHE
-    FILEPATH
-    "Hunter passwords"
+        HUNTER_PASSWORDS_PATH
+        "${CMAKE_CURRENT_LIST_DIR}/passwords.cmake"
+        CACHE
+        FILEPATH
+        "Hunter passwords"
 )
 
-set(
-    HUNTER_CACHE_SERVERS
-    "https://github.com/qdrvm/hunter-binary-cache"
-    CACHE
-    STRING
-    "Binary cache server"
-)
+#set(
+#        HUNTER_CACHE_SERVERS
+#        "https://github.com/qdrvm/hunter-binary-cache"
+#        CACHE
+#        STRING
+#        "Binary cache server"
+#)
+set(HUNTER_USE_CACHE_SERVERS NO)
 
 include(${CMAKE_CURRENT_LIST_DIR}/HunterGate.cmake)
 
 HunterGate(
-    URL  https://github.com/qdrvm/hunter/archive/refs/tags/v0.25.3-qdrvm21.zip
-    SHA1 5b52ab9a309771f172ca609a46e26dde60a8edd7
-    LOCAL
+        URL https://github.com/qdrvm/hunter/archive/refs/tags/v0.25.3-qdrvm21.zip
+        SHA1 5b52ab9a309771f172ca609a46e26dde60a8edd7
+        LOCAL
 )
