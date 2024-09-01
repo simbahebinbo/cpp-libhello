@@ -21,10 +21,16 @@ Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 ```
 
-编译
+完全编译
 
 ```shell
-$ ./build.sh
+$ ./full-build.sh
+```
+
+简单编译
+
+```shell
+$ ./simple-build.sh
 ```
 
 安装
